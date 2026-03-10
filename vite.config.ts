@@ -21,5 +21,15 @@ export default defineConfig({
       // Vercel/Netlify иногда не видит react-dom/client при бандлинге
       external: ['react-dom/client']
     }
+  },
+  // Добавлено: отключаем source maps в production (часто помогает на Vercel)
+  build: {
+    sourcemap: false,  // отключает source maps, чтобы избежать лишних ошибок
+  },
+  // Добавлено: более строгий режим для Vercel
+  esbuild: {
+    logOverride: {
+      'this-is-undefined-in-esm': 'silent'
+    }
   }
 })
