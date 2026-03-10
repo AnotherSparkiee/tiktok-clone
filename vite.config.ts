@@ -5,15 +5,21 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
+    // React и Tailwind обязательны для Make/Figma → не удаляй
     react(),
     tailwindcss(),
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory
+      // Алиас @ → src (уже хорошо)
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      // Фикс ошибки "failed to resolve import react-dom/client"
+      // Vercel/Netlify иногда не видит react-dom/client при бандлинге
+      external: ['react-dom/client']
+    }
+  }
 })
