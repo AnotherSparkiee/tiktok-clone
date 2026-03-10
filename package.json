@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "prebuild": "expo prebuild"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -46,14 +47,16 @@
     "embla-carousel-react": "8.6.0",
     "expo": "~55.0.4",
     "expo-build-properties": "~55.0.9",
+    "expo-modules-autolinking": "~55.0.4",
     "input-otp": "1.4.2",
     "lucide-react": "0.487.0",
     "motion": "12.23.24",
     "next-themes": "0.4.6",
-    "react": "19.2.0",
+    "react": "18.3.1",
     "react-day-picker": "8.10.1",
     "react-dnd": "16.0.1",
     "react-dnd-html5-backend": "16.0.1",
+    "react-dom": "18.3.1",
     "react-hook-form": "7.55.0",
     "react-native": "0.83.2",
     "react-popper": "2.3.0",
@@ -73,8 +76,8 @@
     "vite": "6.3.5"
   },
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -82,11 +85,6 @@
     },
     "react-dom": {
       "optional": true
-    }
-  },
-  "pnpm": {
-    "overrides": {
-      "vite": "6.3.5"
     }
   }
 }
